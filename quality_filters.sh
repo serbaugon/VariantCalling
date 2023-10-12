@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh 
 
 # DIRECTORIES
 # Directory of bcftools and the initial sample files
