@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# This script is aimed to fix INDELs files that have been filtered with VarSome where the
+# number of columns in the VCF does not match the number of elements in the header.
+
 # DIRECTORIES
 DIRECTORY="/mnt/beegfs/home/serbaugon/Samples/Post_VarSome/Indels"
 mkdir -p /mnt/beegfs/home/serbaugon/Samples/Post_VarSome/Indels/Fixed
