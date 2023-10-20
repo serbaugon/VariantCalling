@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# This is script is used for pre-processing of FASTQ files and variant calling of SNVs, SVs and CNVs
+
 #SBATCH -o log_launcher.out
 #SBATCH -e log_launcher.err
 #SBATCH -J sarekLaunch
