@@ -1,3 +1,6 @@
+# This script is aimed to identify which missense VUS SNPs are classified as Likely Pathogenic by AlphaMissense.
+# A plot is also drawn where each missense VUS SNP is assigned its corresponding AlphaMissense score value.
+
 # Load necessary libraries
 library(vcfR)
 library(stringr)
