@@ -1,3 +1,6 @@
+# This script is aimed to identify SNPs classified as Likely Pathogenic or Pathogenic and their associated genes and genetic consequences.
+# It also counts the genomic locations of the SNPs and plots the frequency of the locations per sample.
+
 # Libraries
 library(vcfR)
 library(stringr)
@@ -202,7 +205,7 @@ print(result_df)
 
 
 
-#### Assign  genes and types of variants 
+#### Assign genes and types of variants 
 
 # List to store results from all files
 total_results = list()
