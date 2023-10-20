@@ -1,5 +1,9 @@
 #!/bin/sh
 
+# After annotation with VEP, this script applies some filters to the resulting VCF files.
+# These filters include the deletion of multiallelic variants, separation between SNPs and INDELs, filtering for maximum allelic frequency, removal of introns and, for SNPs only, 
+# filtering to retain only those variants coding for proteins.
+
 # DIRECTORIES
 # Directory of bcftools and the initial sample files
 BCFTOOLS_DIR="/mnt/beegfs/home/mimarbor/singularity_cache/depot.galaxyproject.org-singularity-bcftools-1.16--hfe4b78e_1.img"
@@ -19,7 +23,7 @@ for input in $SAMPLES_DIR/*.vcf; do
   file="$(basename "$input")" 
   name="$(echo $file | cut -d "." -f 1)"
   singularity run $BCFTOOLS_DIR bcftools view --max-alleles 2 $input -o $MAX_ALLELES_DIR/$name.MaxAlleles2.vcf
-  echo "Filtered file: $file"
+  echo "Removed multi-allelic variants from file: $file"
 done
 
 
@@ -32,7 +36,7 @@ for input in $MAX_ALLELES_DIR/*.vcf; do
   file="$(basename "$input")" 
   name="$(echo $file | cut -d "." -f 1)"
   singularity run $BCFTOOLS_DIR bcftools view -v snps $input -o $SNPs_DIR/${name}_SNPs.vcf
-  echo "Filtered file: $file"
+  echo "Extracted SNPs from file: $file"
 done 
 
 # For indels:
@@ -43,7 +47,7 @@ for input in $MAX_ALLELES_DIR/*.vcf; do
   file="$(basename "$input")" 
   name="$(echo $file | cut -d "." -f 1)"
   singularity run $BCFTOOLS_DIR bcftools view -v indels $input -o $INDELS_DIR/${name}_Indels.vcf
-  echo "Filtered file: $file"
+  echo "Extracted INDELs from file: $file"
 done 
 
 
@@ -56,7 +60,7 @@ for input in $SNPs_DIR/*.vcf; do
   file="$(basename "$input")" 
   name="$(echo $file | cut -d "." -f 1)"
   singularity exec vep109.sif filter_vep -i $input -o $MAX_AF_SNPs_DIR/$name.MaxAF.vcf --filter "MAX_AF < 0.05 or not MAX_AF" --force_overwrite
-  echo "Filtered file: $file"
+  echo "MAX_AF filter applied to SNP file: $file"
 done 
 
 # For indels:
@@ -67,7 +71,7 @@ for input in $INDELS_DIR/*.vcf; do
   file="$(basename "$input")" 
   name="$(echo $file | cut -d "." -f 1)"
   singularity exec vep109.sif filter_vep -i $input -o $MAX_AF_INDELS_DIR/$name.MaxAF.vcf --filter "MAX_AF < 0.05 or not MAX_AF" --force_overwrite
-  echo "Filtered file: $file"
+  echo "MAX_AF filter applied to INDEL file: $file"
 done 
 
 
@@ -80,7 +84,7 @@ for input in $MAX_AF_SNPs_DIR/*.vcf; do
   file="$(basename "$input")" 
   name="$(echo $file | cut -d "." -f 1)"
   singularity exec vep109.sif filter_vep -i $input -o $NOT_INTRONS_SNPs_DIR/$name.NotIntrons.vcf --filter "not Consequence match intron" --force_overwrite
-  echo "Filtered file: $file"
+  echo "Removed introns from SNP file: $file"
 done 
 
 # For indels:
@@ -91,7 +95,7 @@ for input in $MAX_AF_INDELS_DIR/*.vcf; do
   file="$(basename "$input")" 
   name="$(echo $file | cut -d "." -f 1)"
   singularity exec vep109.sif filter_vep -i $input -o $NOT_INTRONS_INDELS_DIR/$name.NotIntrons.vcf --filter "not Consequence match intron" --force_overwrite
-  echo "Filtered file: $file"
+  echo "Removed introns from INDEL file: $file"
 done 
 
 
@@ -104,5 +108,5 @@ for input in $NOT_INTRONS_SNPs_DIR/*.vcf; do
   file="$(basename "$input")" 
   name="$(echo $file | cut -d "." -f 1)"
   singularity exec vep109.sif filter_vep -i $input -o $PROTEIN_CODING_SNPs_DIR/$name.ProteinCoding.vcf --filter "(BIOTYPE is protein_coding) or (not BIOTYPE)" --force_overwrite
-  echo "Filtered file: $file"
+  echo "Extracted protein coding variants from SNP file: $file"
 done 
