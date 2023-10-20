@@ -1,4 +1,5 @@
-# This script is aimed to plot an overview of the SVs across the chromosomes per sample before and after applying the filters.
+# This script is aimed to plot an overview of the SVs across the chromosomes per sample before and after applying the filters from TSV files obtained from annotation with AnnotSV.
+# The filters include the PASS filter and the removal of SVs shorter than 50 bp and larger than 50 kb
 
 # Load necessary libraries
 library(data.table)
@@ -6,9 +7,6 @@ library(ggplot2)
 library(dplyr)
 library(ParallelLogger)
 library(SVIV)
-
-# Source the external script containing the svOverviewPlot function
-source("plot_sv_overview.R")
 
 # Columns of interest in the SV data
 columns_of_interest = c('SV_chrom', 'SV_start', 'SV_end', 'SV_type', 'Samples_ID')
