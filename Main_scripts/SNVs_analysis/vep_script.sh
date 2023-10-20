@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # This script sets up all plugins and directories needed for VEP annotation from the VCF files filtered with "quality_filters.sh". 
-# To launch this script to the cluster queue it is required to use the script "sbatch_vep.sh".
+# To launch this script to the cluster queue for all the samples it is required to use the script "sbatch_vep.sh".
 
 # Arguments
 threads=4
