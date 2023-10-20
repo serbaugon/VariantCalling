@@ -7,7 +7,7 @@ Within each script there is information about the function of each one, as well 
 
 
 
-## Authors
+## Author
 
 - [@serbaugon](https://www.github.com/serbaugon)
 
