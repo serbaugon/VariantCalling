@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# This script is aimed for the annotation of SVs using AnnotSV after filters are applied using "SVs_filters.sh"
+# This script is aimed for the annotation of SVs using AnnotSV.
 
 # DIRECTORIES
 DIRECTORY="/mnt/beegfs/home/serbaugon/Manta/Output_AnnotSV_FILTER/Length"
