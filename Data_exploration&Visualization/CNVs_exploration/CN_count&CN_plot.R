@@ -1,4 +1,4 @@
-# This script is aimed to count the copy number (CN) in all segments.
+# This script is aimed to count the copy number (CN) in all segments in CNS files after annoting with CNVkit.
 # It also plots the frequency of CN per sample before and after removing CN = 2.
 
 # Load the gtools package
