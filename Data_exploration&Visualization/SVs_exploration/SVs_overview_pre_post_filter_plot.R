@@ -1,3 +1,5 @@
+# This script is aimed to plot an overview of the SVs across the chromosomes per sample before and after applying the filters.
+
 # Load necessary libraries
 library(data.table)
 library(ggplot2)
