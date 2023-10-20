@@ -1,3 +1,6 @@
+# This script is aimed to count the copy number (CN) in all segments.
+# It also plots the frequency of CN per sample before and after removing CN = 2.
+
 # Load the gtools package
 library(gtools)
 library(ggplot2)
