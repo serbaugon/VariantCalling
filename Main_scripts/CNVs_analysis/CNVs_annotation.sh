@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# This script is aimed for the annotation of segments contained in CALL.CNS files obtained from CNVkit.
+
 # DIRECTORIES
 DIRECTORY="/mnt/beegfs/home/serbaugon/CNVkit"
 mkdir -p $DIRECTORY/Output
