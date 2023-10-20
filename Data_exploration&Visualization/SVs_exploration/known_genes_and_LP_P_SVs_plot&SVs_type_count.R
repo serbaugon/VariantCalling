@@ -1,3 +1,9 @@
+# This script is aimed to identify SVs associated to previously reported PD genes and classify them according to ACMG criteria. Then, it plots the frequency of those SVs per sample
+# and the frequency of their associated genes per sample.
+# Besides, it looks for SVs classified as Likely Pathogenic or Pathogenic according to ACMG criteria and their associated genes. Then, it plots the frequency of those SVs per sample
+# and the frequency of their associated genes per sample.
+# It also counts the different types of SVs (DEL, INS, INV and DUP) per sample before and after filtering.
+
 # Load libraries
 library(data.table)
 library(ggplot2)
@@ -5,9 +11,7 @@ library(dplyr)
 library(tidyr)
 
 
-
-################################# Search relevant genes in filtered TSV
-
+### Search relevant genes in filtered TSV
 # Get the list of TSV files in the folder
 folder <- getwd()
 tsv_files <- list.files(folder, pattern = "\\.tsv$", full.names = TRUE)
@@ -84,17 +88,7 @@ ggplot(gene_match_results, aes(x = Sample, fill = factor(ACMG_class_replaced, le
 
 
 
-
-
-
-
-
-
-
-
-
-
-################################## Search pathogenic and likely pathogenic genes
+### Search pathogenic and likely pathogenic genes
 
 # Function to search genes and details in a filtered file with ACMG_class
 search_genes_with_details <- function(file, genes) {
@@ -141,7 +135,7 @@ print(gene_frequencies)
 
 
 
-############# Gene frequency per Sample
+### Gene frequency per Sample
 # Get genes and samples
 all_genes <- strsplit(acmg_details_results$Gene_name, ";")
 all_samples <- rep(acmg_details_results$Sample, sapply(all_genes, length))
@@ -212,18 +206,7 @@ ggplot(acmg_details_results, aes(x = acmg_details_results$Sample, fill = acmg_de
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-############################### Count SV types in each sample and before and after filtering
+#### Count SV types in each sample and before and after filtering
 
 # Before the loop, initialize the data frames
 dataframe_raw <- data.frame()
@@ -251,11 +234,6 @@ for (file in tsv_files) {
   dataframe_raw <- rbind(dataframe_raw, raw_data)
   dataframe_filtered <- rbind(dataframe_filtered, filtered_data)
 }
-
-
-
-
-
 
 
 
