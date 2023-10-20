@@ -1,4 +1,4 @@
-# This script is aimed to identify SVs associated to previously reported PD genes and classify them according to ACMG criteria. Then, it plots the frequency of those SVs per sample
+# This script is aimed to identify SVs associated to previously reported PD genes and show their classification according to ACMG criteria. Then, it plots the frequency of those SVs per sample
 # and the frequency of their associated genes per sample.
 # Besides, it looks for SVs classified as Likely Pathogenic or Pathogenic according to ACMG criteria and their associated genes. Then, it plots the frequency of those SVs per sample
 # and the frequency of their associated genes per sample.
