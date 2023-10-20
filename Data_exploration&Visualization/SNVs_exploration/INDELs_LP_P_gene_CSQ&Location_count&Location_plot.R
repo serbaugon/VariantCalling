@@ -1,3 +1,6 @@
+# This script is aimed to identify INDELs classified as Likely Pathogenic or Pathogenic and their associated genes and genetic consequences.
+# It also counts the genomic locations of the INDELs and plots the frequency of the locations per sample.
+
 # Libraries
 library(vcfR)
 library(stringr)
