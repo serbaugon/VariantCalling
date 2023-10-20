@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# This script aims to filter the VCF files obtained from Manta that contain the SVs.
+# The filters include the PASS filter and the removal of SVs shorter than 50 bp and larger than 50 kb
+
 # DIRECTORIES
 # Directory of bcftools and SVs files
 BCFTOOLS_DIR="/mnt/beegfs/home/mimarbor/singularity_cache/depot.galaxyproject.org-singularity-bcftools-1.16--hfe4b78e_1.img"
@@ -17,7 +20,7 @@ for input in $SAMPLES_DIR/*.vcf; do
   file="$(basename "$input")" 
   name="$(echo $file | cut -d "." -f 1)"
   singularity run $BCFTOOLS_DIR bcftools view -f PASS $input -o $PASS_DIR/$name.PASS.vcf.gz
-  echo "Filtered file: $file"
+  echo "PASS filter applied to file: $file"
 done
 
 
@@ -29,7 +32,7 @@ for input in $PASS_DIR/*.vcf.gz; do
   file="$(basename "$input")" 
   name="$(echo $file | cut -d "." -f 1)"
   singularity run $BCFTOOLS_DIR bcftools view -i "(SVLEN>50 || SVLEN<-50) && (SVLEN<50000 && SVLEN>-50000)" $input -o $LENGTH_DIR/$name.Length.vcf
-  echo "Filtered file: $file"
+  echo "SVs length filter applied to file: $file"
 done
 
 
