@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# This script is used for the classification of SNVs (after post VEP filters were applied) according to ACMG criteria into:
+# Benign, Likely Benign, Uncertain Significance, Likely Pathogenic or Pathogenic.
+
 # DIRECTORIES
 SAMPLES_SNPs="/mnt/beegfs/home/serbaugon/Samples/Post_VEP/SNPs/PROTEIN_CODING"
 SAMPLES_INDELS="/mnt/beegfs/home/serbaugon/Samples/Post_VEP/Indels/NOT_INTRONS"
@@ -17,7 +20,7 @@ for input in $SAMPLES_SNPs/*.vcf; do
   file="$(basename "$input")" 
   name="$(echo $file | cut -d "." -f 1)"
   varsome_api_annotate_vcf.py -k 'dRc22Vd%IvCVgOY42IVO8!vbcSthl9t@JXOe2eJ8' -g hg38 -p add-ACMG-annotation=1 -i $input -o $POST_VARSOME_SNPs_DIR/${name}_VarSome.vcf -u 'https://api.varsome.com/'
-  echo "Classified file: $file"
+  echo "Classified SNP file: $file"
 done
 
 # For indels:
@@ -28,5 +31,5 @@ for input in $SAMPLES_INDELS/*.vcf; do
   file="$(basename "$input")" 
   name="$(echo $file | cut -d "." -f 1)"
   varsome_api_annotate_vcf.py -k 'dRc22Vd%IvCVgOY42IVO8!vbcSthl9t@JXOe2eJ8' -g hg38 -p add-ACMG-annotation=1 -i $input -o $POST_VARSOME_INDELS_DIR/${name}_VarSome.vcf -u 'https://api.varsome.com/'
-  echo "Classified file: $file"
+  echo "Classified INDEL file: $file"
 done
