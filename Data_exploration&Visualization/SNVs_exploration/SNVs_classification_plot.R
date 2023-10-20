@@ -1,3 +1,6 @@
+# This script is aimed to count how many VUS, Likely Pathogenic and Pathogenic variants are in SNP and INDEL files
+# 2 plots are also drawn (one for SNPs and one for INDELs) with the frequency of VUS, Likely Pathogenic and Pathogenic variants per sample.
+
 # Libraries
 library(vcfR)
 library(tidyverse)
@@ -97,7 +100,6 @@ ggplot(snps_order, aes(x = Sample, y = Count, fill = Classification)) +
   scale_fill_manual(values = c("firebrick1", "salmon1", "orchid"),
                     name = "ACMG classification",
                     labels = c("Pathogenic", "Likely Pathogenic", "VUS"))
-
 
 
 # For INDELs
