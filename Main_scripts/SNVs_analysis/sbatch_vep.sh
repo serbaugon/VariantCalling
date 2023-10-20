@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# This script is used to lauch the script "vep_script.sh" for each sample to the cluster queue
+
 # Directories of the input samples, the logfiles and the annotation script with VEP
 SAMPLES="/mnt/beegfs/home/serbaugon/Samples/Quality_Filters/PASS"
 mkdir -p "/mnt/beegfs/home/serbaugon/Samples/Output_VEP"
