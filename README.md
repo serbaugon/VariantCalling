@@ -18,6 +18,9 @@ This script will perform the pre-processing of the samples as well as the varian
 
 These steps are performed in the nf-core/sarek framework, a workflow for germline and somatic variant detection from WGS, WES and gene panel data. Sarek is part of the pipelines developed by the nf-core community and is written in Nextflow.
 
+[Go to Workflow section](#4-workflow)
+
+
 ## 2. Analysis of the variants
 * **SNVs analysis**
 
