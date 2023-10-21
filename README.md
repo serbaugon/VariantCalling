@@ -71,3 +71,14 @@ Tools needed to run the bash scripts: *bcftools*, *Ensembl Variant Effect Predic
 
 Packages needed to run the *R* scripts: *vcfR*, *stringr*, *ggplot2*, *data.table*, *dplyr*, *tidyr*, *ParallelLogger*, *SVIV* and *gtools*.
 
+
+
+<p align="center">
+    <img src="https://github.com/serbaugon/WGS-analysis-PD/blob/master/Images/workflow.jpg" width="600"/>
+</p>
+
+
+
+
+
+
