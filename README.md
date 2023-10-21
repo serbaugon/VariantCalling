@@ -1,8 +1,8 @@
 # Genetic characterization with Whole Genome Sequencing of Parkinson's disease patients
 
-These scripts were developed for the genetic characterization of Parkinson's disease (PD) patients using short-read WGS. The aim is to identify single nucleotide variants (SNVs), structural variants (SVs) and copy number variation (CNVs), extract relevant information from them and perform diverse plots.
+These scripts were developed for the genetic characterization of Parkinson's disease (PD) patients using short-read WGS. The aim is to identify single nucleotide variants (SNVs), structural variants (SVs) and copy number variation (CNVs), extract relevant information from them and perform diverse plots. For a better understanding of the steps and tools used you can take a look at the [workflow](#4-workflow).
 
-Within each script there is information about the function of each one, as well as the parameters and filters used.
+Within each script there is information about the functions of each one, as well as the parameters and filters used.
 
 
 
@@ -17,8 +17,6 @@ First of all, it is necessary to launch the script **sarek_launch.sbatch** using
 This script will perform the pre-processing of the samples as well as the variant calling of SNVs (*HaplotypeCaller*), SVs (*Manta*) and CNVs (*CNVkit*).
 
 These steps are performed in the nf-core/sarek framework, a workflow for germline and somatic variant detection from WGS, WES and gene panel data. Sarek is part of the pipelines developed by the nf-core community and is written in Nextflow.
-
-[Go to Workflow section](#4-workflow)
 
 
 ## 2. Analysis of the variants
