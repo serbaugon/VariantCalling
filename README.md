@@ -1,4 +1,3 @@
-
 # Genetic characterization with Whole Genome Sequencing of Parkinson's disease patients
 
 These scripts were developed for the genetic characterization of Parkinson's disease (PD) patients using short-read WGS. The aim is to identify single nucleotide variants (SNVs), structural variants (SVs) and copy number variation (CNVs), extract relevant information from them and perform diverse plots.
@@ -64,18 +63,21 @@ It also counts the different types of SVs (DEL, INS, INV and DUP) per sample bef
 For counting the copy number (CN) in all segments in CNS files after annoting with *CNVkit* and plot the frequency of CN per sample before and after removing CN = 2, **CN_count&CN_plot.R** can be used.
 
 
+## 4. Workflow
+
+<p align="center">
+  <img src="workflow.jpg" width="50%">
+</p>
 
 
-## 4. Dependencies
+## 5. Dependencies
 Tools needed to run the bash scripts: *bcftools*, *Ensembl Variant Effect Predictor* (*VEP*), *AnnotSV* and those tools implemented in the nf-core/sarek pipeline.
 
 Packages needed to run the *R* scripts: *vcfR*, *stringr*, *ggplot2*, *data.table*, *dplyr*, *tidyr*, *ParallelLogger*, *SVIV* and *gtools*.
 
 
 
-<p align="center">
-    <img src="https://github.com/serbaugon/WGS-analysis-PD/blob/master/Images/workflow.jpg" width="600"/>
-</p>
+
 
 
 
