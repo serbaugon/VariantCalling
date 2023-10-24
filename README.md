@@ -43,9 +43,9 @@ The script **CNVs_annotation.sh** is used for the annotation of segments contain
 ## 3. Data exploration and visualization
 * **SNV exploration**
   
-To count how many VUS, Likely Pathogenic and Pathogenic variants are in SNV and INDEL files and also plot the frequency of VUS, Likely Pathogenic and Pathogenic variants per sample, the **SNVs_classification_plot.R** script is used.
+To count how many VUS, Likely Pathogenic and Pathogenic variants are in SNV and INDEL files and also plot the frequency of VUS, Likely Pathogenic and Pathogenic variants per sample, the **SNVs_INDELs_classification_plot.R** script is used.
 
-For the identification of variants classified as Likely Pathogenic or Pathogenic and their associated genes and genetic consequences, the **SNPs_LP_P_gen_CSQ&Location_count&Location_plot.R** script can be used in the case of SNPs and the **INDELs_LP_P_gen_CSQ&Location_count&Location_plot.R** script in the case of INDELs. Both scripts also plot count the genomic locations of the variants and plot the frequency of the locations per sample.
+For the identification of variants classified as Likely Pathogenic or Pathogenic and their associated genes and genetic consequences, the **SNVs_LP_P_gen_CSQ&Location_count&Location_plot.R** script can be used in the case of SNPs and the **INDELs_LP_P_gen_CSQ&Location_count&Location_plot.R** script in the case of INDELs. Both scripts also plot count the genomic locations of the variants and plot the frequency of the locations per sample.
 
 **verdict_CSQ_AlphaMissense.R** is used to identify which missense VUS SNPs are classified as Likely Pathogenic by *AlphaMissense*. Besides, it plots each of those missense VUS SNP and their corresponding *AlphaMissense* score values.
 
