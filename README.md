@@ -67,7 +67,7 @@ For counting the copy number (CN) in all segments in CNS files after annoting wi
 ## 4. Workflow
 
 <p align="center">
-  <img src="workflow.jpg" width="50%">
+  <img src="workflow.png" width="50%">
 </p>
 
 
