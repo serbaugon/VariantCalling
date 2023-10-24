@@ -21,6 +21,7 @@ These steps are performed in the nf-core/sarek framework, a workflow for germlin
 
 ## 2. Analysis of the variants
 * **SNV/INDEL analysis**
+Both the scripts for analyzing SNVs and INDELs are in the Main_scripts/SNVs folder.
 
 The compressed VCF files obtained from the SNVs variant calling are quality filtered using the **quality_filters.sh** script. 
 
@@ -41,7 +42,9 @@ VCF files obtained from SVs variant calling with *Manta* are annotated with *Ann
 The script **CNVs_annotation.sh** is used for the annotation of segments contained in CALL.CNS files obtained from *CNVkit*.
 
 ## 3. Data exploration and visualization
-* **SNV exploration**
+* **SNV/INDEL exploration**
+
+Both the scripts for exploring and visualizing SNVs and INDELs are in the Data_exploration&Visualization/SNVs folder.
   
 To count how many VUS, Likely Pathogenic and Pathogenic variants are in SNV and INDEL files and also plot the frequency of VUS, Likely Pathogenic and Pathogenic variants per sample, the **SNVs_INDELs_classification_plot.R** script is used.
 
