@@ -21,6 +21,7 @@ These steps are performed in the nf-core/sarek framework, a workflow for germlin
 
 ## 2. Analysis of the variants
 * **SNV/INDEL analysis**
+  
 Both the scripts for analyzing SNVs and INDELs are in the Main_scripts/SNVs folder.
 
 The compressed VCF files obtained from the SNVs variant calling are quality filtered using the **quality_filters.sh** script. 
