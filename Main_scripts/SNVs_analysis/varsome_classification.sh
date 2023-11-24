@@ -19,7 +19,7 @@ POST_VARSOME_SNPs_DIR="$POST_VARSOME_DIR/SNPs"
 for input in $SAMPLES_SNPs/*.vcf; do
   file="$(basename "$input")" 
   name="$(echo $file | cut -d "." -f 1)"
-  varsome_api_annotate_vcf.py -k 'dRc22Vd%IvCVgOY42IVO8!vbcSthl9t@JXOe2eJ8' -g hg38 -p add-ACMG-annotation=1 -i $input -o $POST_VARSOME_SNPs_DIR/${name}_VarSome.vcf -u 'https://api.varsome.com/'
+  varsome_api_annotate_vcf.py -k '...' -g hg38 -p add-ACMG-annotation=1 -i $input -o $POST_VARSOME_SNPs_DIR/${name}_VarSome.vcf -u 'https://api.varsome.com/'
   echo "Classified SNP file: $file"
 done
 
@@ -30,6 +30,6 @@ POST_VARSOME_INDELS_DIR="$POST_VARSOME_DIR/Indels"
 for input in $SAMPLES_INDELS/*.vcf; do
   file="$(basename "$input")" 
   name="$(echo $file | cut -d "." -f 1)"
-  varsome_api_annotate_vcf.py -k 'dRc22Vd%IvCVgOY42IVO8!vbcSthl9t@JXOe2eJ8' -g hg38 -p add-ACMG-annotation=1 -i $input -o $POST_VARSOME_INDELS_DIR/${name}_VarSome.vcf -u 'https://api.varsome.com/'
+  varsome_api_annotate_vcf.py -k '...' -g hg38 -p add-ACMG-annotation=1 -i $input -o $POST_VARSOME_INDELS_DIR/${name}_VarSome.vcf -u 'https://api.varsome.com/'
   echo "Classified INDEL file: $file"
 done
